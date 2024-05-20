@@ -13,10 +13,11 @@ public class Author extends AbstractEntity<AuthorID> {
     private FullName fullName;
 
     public Author(String fullName) {
+        super(AuthorID.randomId(AuthorID.class));
         this.fullName = new FullName(fullName);
     }
 
     protected Author() {
-
+        super(AuthorID.randomId(AuthorID.class));
     }
 }

@@ -28,5 +28,22 @@ public class Book extends AbstractEntity<BookISBN> {
 
     private String genre;
 
-    private Integer quantity;
+    protected Book(){
+        super(BookISBN.randomId(BookISBN.class));
+    }
+
+    public static Book create(String title, String authorName,String publisher,Date publicationDate,Money price,int pages,String genre)
+    {
+        Book book = new Book();
+        book.title = title;
+        book.author = new Author(authorName);
+        book.publicationDate = publicationDate;
+        book.publisher = publisher;
+        book.price = price;
+        book.pages = pages;
+        book.genre = genre;
+        return book;
+    }
 }
+
+

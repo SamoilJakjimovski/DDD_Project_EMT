@@ -46,7 +46,7 @@ public class Money {
         return new Money(currency,this.amount-money.amount);
     }
 
-    public Money subtract(int m){
+    public Money multiply(int m){
         return new Money(currency,this.amount*m);
     }
 }
